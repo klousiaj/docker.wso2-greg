@@ -15,7 +15,7 @@ ENV WSO2_FOLDER_NAME wso2greg
 EXPOSE 9449 9769
 
 # move the file onto the container so it can be unzipped
-RUN wget -q -P /opt https://www.dropbox.com/s/tgb9q7ic4fxuabk/wso2greg-5.1.0.zip; \
+RUN wget -q --no-check-certificate -P /opt https://www.dropbox.com/s/tgb9q7ic4fxuabk/wso2greg-5.1.0.zip; \
   unzip /opt/$WSO2_BUNDLE_NAME.zip -d /opt/ > /opt/${WSO2_FOLDER_NAME}.listfiles; \
   mv /opt/${WSO2_BUNDLE_NAME} /opt/${WSO2_FOLDER_NAME}; \
   rm /opt/${WSO2_BUNDLE_NAME}.zip; \
