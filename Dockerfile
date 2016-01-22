@@ -27,7 +27,7 @@ RUN apt-get -y remove curl wget unzip
   
 USER wso2
 
-ENV JAVA_HOME /usr/java/default
+ENV JAVA_HOME /opt/java
 
 # Working Directory in Container
 WORKDIR /opt/${WSO2_FOLDER_NAME}/bin/
