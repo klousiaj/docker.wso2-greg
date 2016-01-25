@@ -20,10 +20,12 @@ RUN wget -q --no-check-certificate -P /opt https://www.dropbox.com/s/tgb9q7ic4fx
   mv /opt/${WSO2_BUNDLE_NAME} /opt/${WSO2_FOLDER_NAME}; \
   rm /opt/${WSO2_BUNDLE_NAME}.zip; \
   rm /opt/${WSO2_FOLDER_NAME}.listfiles; \
-  chown -R wso2:wso2 /opt/${WSO2_FOLDER_NAME};
+  chown -R wso2:wso2 /opt/${WSO2_FOLDER_NAME}; 
 
 # remove curl/unzip/wget since we don't need them.
 RUN apt-get -y remove curl wget unzip
+
+COPY assets/repository/conf/identity/sso-idp-config.xml /opt/${WSO2_FOLDER_NAME}/repository/conf/identity/sso-idp-config.xml
   
 USER wso2
 
