@@ -5,8 +5,8 @@
 This image includes an instance of the WSO2 Governance Registry (GREG) and is built on the [klousiaj/oracle-java](https://hub.docker.com/r/klousiaj/oracle-java/) image. 
 
 ## What ports are exposed?
-- 9443 - HTTPS servlet transport
-- 9763 - HTTP servlet transport
+- 9444 - HTTPS servlet transport
+- 9764 - HTTP servlet transport
 
 ## Usage
 TBD

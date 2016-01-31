@@ -9,7 +9,7 @@ ENV WSO2_BUNDLE_NAME wso2greg-5.1.0
 ENV WSO2_FOLDER_NAME wso2greg
 
 # expose the necessary ports to run the Governance Registry
-EXPOSE 9449 9769
+EXPOSE 9444 9764
 
 # move the file onto the container so it can be unzipped
 RUN wget -q --no-check-certificate -P /opt https://www.dropbox.com/s/tgb9q7ic4fxuabk/wso2greg-5.1.0.zip; \
@@ -25,4 +25,4 @@ ENV JAVA_HOME /opt/java
 WORKDIR /opt/${WSO2_FOLDER_NAME}/bin/
 
 # Start WSO2-GREG
-CMD sh ./wso2server.sh -DportOffset=6
+CMD sh ./wso2server.sh -DportOffset=1
