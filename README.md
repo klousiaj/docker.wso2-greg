@@ -1,5 +1,6 @@
 ## Supported Tags and Dockerfile Links
-- latest, 5.1.0 [Dockerfile](https://github.com/klousiaj/docker.wso2-greg/blob/master/Dockerfile)
+- latest, 5.2.0 [Dockerfile](https://github.com/klousiaj/docker.wso2-greg/blob/5.2.0/Dockerfile) 
+- 5.1.0 [Dockerfile](https://github.com/klousiaj/docker.wso2-greg/blob/5.1.0/Dockerfile)
 
 ## WSO2 Governance Registry
 This image includes an instance of the WSO2 Governance Registry (GREG) and is built on the [klousiaj/oracle-java](https://hub.docker.com/r/klousiaj/oracle-java/) image. 
