@@ -7,9 +7,9 @@ MAINTAINER J.P. Klousia <klousiaj>
 
 ENV WSO2_BUNDLE_NAME wso2greg-5.2.0
 ENV WSO2_FOLDER_NAME wso2greg
-
-# expose the necessary ports to run the Governance Registry
-EXPOSE 9444 9764
+ENV WSO2_HTTPS_PORT 9444
+ENV WSO2_HTTP_PORT 9764
+ENV WSO2_PORT_OFFSET 1
 
 # move the file onto the container so it can be unzipped
 RUN wget -q --no-check-certificate -P /opt https://www.dropbox.com/s/p1zzpk7arlepoxd/wso2greg-5.2.0.zip; \
@@ -23,5 +23,11 @@ ENV JAVA_HOME /opt/java
 # Working Directory in Container
 WORKDIR /opt/${WSO2_FOLDER_NAME}/bin/
 
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+# expose the necessary ports to run the Governance Registry
+EXPOSE ${WSO2_HTTPS_PORT} ${WSO2_HTTP_PORT}
+
 # Start WSO2-GREG
-CMD sh ./wso2server.sh -DportOffset=1
+CMD ["./wso2server.sh"]
