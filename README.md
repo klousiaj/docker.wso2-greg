@@ -1,9 +1,10 @@
 ## Supported Tags and Dockerfile Links
-- latest, 5.2.0 [Dockerfile](https://github.com/klousiaj/docker.wso2-greg/blob/5.2.0/Dockerfile) 
+- latest, 5.3.0 [Dockerfile](https://github.com/klousiaj/docker.wso2-greg/blob/5.3.0/Dockerfile)
+- 5.2.0 [Dockerfile](https://github.com/klousiaj/docker.wso2-greg/blob/5.3.0/Dockerfile) 
 - 5.1.0 [Dockerfile](https://github.com/klousiaj/docker.wso2-greg/blob/5.1.0/Dockerfile)
 
 ## WSO2 Governance Registry
-This image includes an instance of the WSO2 Governance Registry (GREG) and is built on the [klousiaj/oracle-java](https://hub.docker.com/r/klousiaj/oracle-java/) image. The application is installed to /opt/`<WSO2_FOLDER_NAME>` and requires the `DOCKER_HOST_IP` environment variable to be set. 
+This image includes an instance of the WSO2 Governance Registry (GREG) and is built on the [klousiaj/oracle-java](https://hub.docker.com/r/klousiaj/oracle-java/) image. The application is installed to /opt/`<WSO2_FOLDER_NAME>` and requires the `DOCKER_HOST_IP` environment variable to be set. This has been created for demos and exploring the platform. It should not be used in an environment where reliability is critical.  
 
 ## What ports are exposed?
 - 9444 - HTTPS servlet transport
@@ -18,7 +19,7 @@ This image includes an instance of the WSO2 Governance Registry (GREG) and is bu
 - `JAVA_HOME` (/opt/java)
 
 ### Fixed 
-- `WSO2_BUNDLE_NAME` *(wso2greg-5.2.0)* - property used to find the appropriate archive to download. Also used to establish directory structure within the image.
+- `WSO2_BUNDLE_NAME` *(wso2greg-5.3.0)* - property used to find the appropriate archive to download. Also used to establish directory structure within the image.
 - `WSO2_FOLDER_NAME` *(wso2greg)* - property used to find the appropriate archive to download. Also used to establish directory structure within the image.
 
 ### Configurable
@@ -30,5 +31,9 @@ This image includes an instance of the WSO2 Governance Registry (GREG) and is bu
 ## VOLUMES
 No volumes have been specified for this image.
 
+## Issues
+If you have problems with the image, please record it as a [Github Issue](https://github.com/klousiaj/docker.wso2-greg/issues) 
+
 ## Usage
-TBD
+This image is officially supported on Docker 1.12.1
+`$docker run --name greg -d -p9444:9444 -p9764:9764 -e DOCKER_HOST_IP=localhost klousiaj/wso2-greg:latest`
